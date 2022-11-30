@@ -29,7 +29,7 @@ public class ProductController {
     @GetMapping(value = "/pdt/get/{pid}")
     ApiResponse get(@PathVariable String pid) {
         logger.info("/api/count get request "+pid);
-        return ApiResponse.ok("count");
+        return ApiResponse.ok("{\"date\":false,\"pid\":\"11231\",\"info\":\"FlvaQv4he4\",\"name\":\"电信小翼版SL181小鹤台灯模型\",}");
     }
 
 
