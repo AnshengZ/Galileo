@@ -31,12 +31,12 @@ public class ProductController {
     @GetMapping(value = "/pdt/get/{pid}")
     ApiResponse get(@PathVariable String pid) throws JSONException {
         logger.info("/pdt/get pid:{} ",pid);
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("name","kh");
-        jsonObject.put("info","product info");
-        jsonObject.put("pid",pid);
-        jsonObject.put("count",1);
-        return ApiResponse.ok(jsonObject);
+//        JSONObject jsonObject = new JSONObject();
+//        jsonObject.put("name","kh");
+//        jsonObject.put("info","product info");
+//        jsonObject.put("pid",pid);
+//        jsonObject.put("count",1);
+        return ApiResponse.ok("{\"data\":true}");
     }
 
 
