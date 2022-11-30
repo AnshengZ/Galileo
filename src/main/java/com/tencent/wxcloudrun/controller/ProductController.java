@@ -8,6 +8,8 @@ import com.tencent.wxcloudrun.service.CounterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONException;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -27,9 +29,14 @@ public class ProductController {
      * @return API response json
      */
     @GetMapping(value = "/pdt/get/{pid}")
-    ApiResponse get(@PathVariable String pid) {
+    ApiResponse get(@PathVariable String pid) throws JSONException {
         logger.info("/api/count get request "+pid);
-        return ApiResponse.ok("{\"date\":false,\"pid\":\"11231\",\"info\":\"FlvaQv4he4\",\"name\":\"电信小翼版SL181小鹤台灯模型\",}");
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name","kh");
+        jsonObject.put("info","product info");
+        jsonObject.put("pid",pid);
+        jsonObject.put("count",1);
+        return ApiResponse.ok(jsonObject);
     }
 
 
