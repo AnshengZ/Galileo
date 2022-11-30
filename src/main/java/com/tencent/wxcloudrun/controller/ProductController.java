@@ -8,10 +8,7 @@ import com.tencent.wxcloudrun.service.CounterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -29,9 +26,9 @@ public class ProductController {
      *
      * @return API response json
      */
-    @GetMapping(value = "/pdt/get")
-    ApiResponse get() {
-        logger.info("/api/count get request");
+    @GetMapping(value = "/pdt/get/{pid}")
+    ApiResponse get(@PathVariable String pid) {
+        logger.info("/api/count get request "+pid);
         return ApiResponse.ok("count");
     }
 
