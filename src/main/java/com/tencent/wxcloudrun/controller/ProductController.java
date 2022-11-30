@@ -30,7 +30,7 @@ public class ProductController {
      */
     @GetMapping(value = "/pdt/get/{pid}")
     ApiResponse get(@PathVariable String pid) throws JSONException {
-        logger.info("/api/count get request "+pid);
+        logger.info("/pdt/get pid:{} ",pid);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name","kh");
         jsonObject.put("info","product info");
